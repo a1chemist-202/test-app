@@ -1,5 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
+import { dirname } from "path";
 
 const app = express();
 const port = 3000;
@@ -12,6 +13,7 @@ const port = 3000;
 //Step 4 - Add a dynamic year to the footer.
 //Hint: Google to find out how to get the current year using JS.
 app.use(express.static("public"));
+const __dirname = dirname(fileURLToPath(import.meta.url));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
