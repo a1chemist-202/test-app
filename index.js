@@ -14,7 +14,6 @@ const port = 3000;
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs')
-app.engine("ejs", require("ejs").__express);
 app.set('views', __dirname + '/views')
 
 app.get("/", (req, res) => {
